@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Counter from './components/Counter';
 import NotFoundPage from './components/NotFoundPage';
 import Layout from "./components/Layout";
+import Page from './components/Page';
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: "counter", element: <Counter /> },
     ],
   },
+  { path: "pages/:id", element: <Page /> },
   { path: "*", element: <NotFoundPage /> },
 ]);
 
