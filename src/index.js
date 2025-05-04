@@ -8,7 +8,7 @@ import Counter from './components/Counter';
 import NotFoundPage from './components/NotFoundPage';
 import Layout from "./components/Layout";
 import Page from './components/Page';
-import { store } from './app/store'
+import { store } from './redux/store'
 import { Provider } from 'react-redux'
 
 
