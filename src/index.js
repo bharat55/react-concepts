@@ -6,20 +6,28 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Counter from './components/Counter';
 import NotFoundPage from './components/NotFoundPage';
+import Layout from "./components/Layout";
 
-const router = createBrowserRouter(
-  [
-    { path: "/", element: <App/>},
-    { path: "/counter", element: <Counter/> },
-    { path: "*", element: <NotFoundPage/> },
-  ]
-)
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { index: true, element: <App /> },
+      { path: "counter", element: <Counter /> },
+    ],
+  },
+  { path: "*", element: <NotFoundPage /> },
+]);
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+      <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
